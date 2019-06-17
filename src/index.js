@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import Pads from "./components/Pads";
 import Controller from "./components/Controller";
@@ -120,9 +120,10 @@ const bankTwo = [
 ];
 
 function App() {
+  const [currentBank, setCurrentBank] = useState(bankOne);
   return (
     <div className="App">
-      <Pads />
+      <Pads bank={currentBank} />
       <Controller />
     </div>
   );

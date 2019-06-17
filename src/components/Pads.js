@@ -1,18 +1,18 @@
 import React from "react";
 import Pad from "./Pad";
 
-const Pads = () => {
+const Pads = ({ bank }) => {
   return (
     <div className="pads-section">
-      <Pad />
-      <Pad />
-      <Pad />
-      <Pad />
-      <Pad />
-      <Pad />
-      <Pad />
-      <Pad />
-      <Pad />
+      {bank.map(sound => (
+        <Pad
+          key={sound.keyTrigger}
+          keyCode={sound.keyCode}
+          keyTrigger={sound.keyTrigger}
+          id={sound.id}
+          url={sound.url}
+        />
+      ))}
     </div>
   );
 };
