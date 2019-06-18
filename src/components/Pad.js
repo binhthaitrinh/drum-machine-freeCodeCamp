@@ -1,23 +1,26 @@
 import React, { useState, useEffect } from "react";
 
-const activeStyle = {
-  boxShadow: "none",
-  backgroundColor: "red",
-  color: "#fff"
-};
-const inactiveStyle = {
-  boxShadow: "0.3rem 0.3rem 0.5rem rgba(0, 0, 0, 0.4)",
-  backgroundColor: "#fff",
-  color: "black"
-};
-
-const Pad = ({ keyCode, keyTrigger, id, url, setStatus }) => {
+const Pad = ({ keyCode, keyTrigger, id, url, setStatus, power }) => {
+  const activeStyle = {
+    boxShadow: "none",
+    backgroundColor: "red",
+    color: "#fff"
+  };
+  const inactiveStyle = {
+    boxShadow: "0.4rem 0.4rem 0.5rem rgba(0, 0, 0, 0.4)",
+    backgroundColor: "#fff",
+    color: "black"
+  };
   const [padStyle, setPadStyle] = useState(inactiveStyle);
 
   const playSound = () => {
     const sound = document.querySelector(`#${keyTrigger}`);
     sound.currentTime = 0;
     sound.play();
+    if (!power) {
+      activeStyle.backgroundColor = "white";
+      activeStyle.color = "black";
+    }
     setPadStyle(activeStyle);
     setTimeout(() => setPadStyle(inactiveStyle), 200);
     setStatus(id);

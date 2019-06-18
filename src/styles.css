@@ -15,7 +15,7 @@ html {
   border: 1px solid black;
   max-width: 70rem;
   border-radius: 4px;
-  background-color: #fff;
+  background-color: rgb(247, 248, 156);
   box-shadow: 1rem 1rem 2rem 1rem rgba(0, 0, 0, 0.1);
   margin: 10rem auto;
   display: flex;

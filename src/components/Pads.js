@@ -13,6 +13,7 @@ const Pads = ({ bank, power, setStatus }) => {
             id={sound.id}
             url={sound.url}
             setStatus={setStatus}
+            power={power}
           />
         ))}
       </div>
@@ -27,6 +28,7 @@ const Pads = ({ bank, power, setStatus }) => {
             keyTrigger={sound.keyTrigger}
             id={sound.id}
             url="#"
+            power={power}
           />
         ))}
       </div>
