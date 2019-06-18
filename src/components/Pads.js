@@ -1,7 +1,7 @@
 import React from "react";
 import Pad from "./Pad";
 
-const Pads = ({ bank, power }) => {
+const Pads = ({ bank, power, setStatus }) => {
   if (power) {
     return (
       <div className="pads-section">
@@ -12,6 +12,7 @@ const Pads = ({ bank, power }) => {
             keyTrigger={sound.keyTrigger}
             id={sound.id}
             url={sound.url}
+            setStatus={setStatus}
           />
         ))}
       </div>

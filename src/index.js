@@ -121,11 +121,18 @@ const bankTwo = [
 
 function App() {
   const [currentBank, setCurrentBank] = useState(bankOne);
+  const [status, setStatus] = useState("");
+
   const [power, setPower] = useState(true);
   return (
     <div className="App">
-      <Pads bank={currentBank} power={power} />
-      <Controller setPower={setPower} power={power} />
+      <Pads setStatus={setStatus} bank={currentBank} power={power} />
+      <Controller
+        setStatus={setStatus}
+        status={status}
+        setPower={setPower}
+        power={power}
+      />
     </div>
   );
 }
