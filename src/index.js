@@ -120,8 +120,13 @@ const bankTwo = [
 ];
 
 function App() {
-  const [currentBank, setCurrentBank] = useState(bankOne);
   const [status, setStatus] = useState("");
+  const [bank, setBank] = useState(true);
+  const onBankChange = () => {
+    setBank(!bank);
+  };
+
+  const currentBank = bank ? bankOne : bankTwo;
 
   const [power, setPower] = useState(true);
   return (
@@ -132,6 +137,12 @@ function App() {
         status={status}
         setPower={setPower}
         power={power}
+        onBankChange={onBankChange}
+        currentBank={currentBank}
+        bank={bank}
+        displayName={
+          currentBank === bankOne ? "Smooth Piano Kit" : "Heater Kit"
+        }
       />
     </div>
   );

@@ -59,7 +59,8 @@ html {
   font-size: 1.5rem;
 }
 
-.power-btn {
+.power-btn,
+.bank-btn {
   background-color: black;
   width: 4.5rem;
   height: 2.4rem;
@@ -69,7 +70,8 @@ html {
   margin-bottom: 1rem;
 }
 
-.power-slider {
+.power-slider,
+.bank-slider {
   background-color: red;
   height: 2rem;
   width: 2rem;
@@ -82,7 +84,7 @@ html {
 .label {
   background-color: black;
   height: 3rem;
-  width: 10rem;
+  width: 15rem;
   color: white;
   display: flex;
   justify-content: center;

@@ -1,6 +1,15 @@
 import React, { useState } from "react";
 
-const Controller = ({ power, setPower, status, setStatus }) => {
+const Controller = ({
+  power,
+  setPower,
+  status,
+  setStatus,
+  onBankChange,
+  currentBank,
+  displayName,
+  bank
+}) => {
   const [volume, setVolume] = useState(1);
 
   const onVolumeChange = e => {
@@ -38,8 +47,26 @@ const Controller = ({ power, setPower, status, setStatus }) => {
           step="0.01"
           value={volume}
           onChange={onVolumeChange}
+          disabled={power ? false : true}
           // disabled={props.power ? false : true}
         />
+      </div>
+
+      <div className="bank-section">
+        <p>Bank</p>
+        <div className="bank-btn">
+          <div
+            onClick={() => {
+              if (!power) {
+                return;
+              }
+              setStatus(displayName);
+              setTimeout(() => setStatus(""), 1500);
+              onBankChange();
+            }}
+            className={`bank-slider ${bank ? "" : "turn-on"}`}
+          />
+        </div>
       </div>
     </div>
   );
